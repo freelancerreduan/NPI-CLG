@@ -19,7 +19,7 @@ class isUser
         if (auth()->user()->role == 'user') {
             return $next($request);
         }else{
-            return back();
+            return abort(404);
         }
     }
 }

@@ -19,7 +19,7 @@ class isSaller
         if (auth()->user()->role == 'saller') {
             return $next($request);
         }else{
-            return back();
+            return abort(404);
         }
     }
 }

@@ -19,7 +19,7 @@ class isAdmin
         if (auth()->user()->role == 'admin') {
             return $next($request);
         }else{
-            return back();
+            return abort(404);
         }
     }
 }

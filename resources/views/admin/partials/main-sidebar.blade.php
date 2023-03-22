@@ -24,8 +24,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="{{ route('admin.index') }}" class="nav-link active">
+          <li class="nav-item">
+            <a href="{{ route('admin.index') }}" class="nav-link {{ Request::url() == route('admin.index') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -35,21 +35,85 @@
 
 
 
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item {{ Request::url() == route('category.index') || Request::url() == route('category.create') ? 'menu-is-opening menu-open' : '' }}">
+            <a href="#" class="nav-link {{ Request::url() == route('category.index') || Request::url() == route('category.create') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                UI Elements
+                Categories
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('category.index') }}" class="nav-link {{ Request::url() == route('category.index') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Category</p>
+                    </a>
+                </li>
+
+              <li class="nav-item">
+                <a href="{{ route('category.create') }}" class="nav-link {{ Request::url() == route('category.create') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Category</p>
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item {{  Request::url() == route('counter.index') || Request::url() == route('counter.create') ? 'menu-is-opening menu-open' : ''  }}">
+            <a href="#" class="nav-link {{  Request::url() == route('counter.index') || Request::url() == route('counter.create') ? 'active' : ''  }}">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Counter's
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('counter.index') }}" class="nav-link {{ Request::url() == route('counter.index') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Counter</p>
+                    </a>
+                </li>
+
+              <li class="nav-item">
+                <a href="{{ route('counter.create') }}" class="nav-link {{ Request::url() == route('counter.create') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Counter</p>
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+
+
+          {{-- <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Blog
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="pages/UI/general.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Blog</p>
+                    </a>
+                </li>
+
               <li class="nav-item">
                 <a href="pages/UI/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>Create Blog</p>
                 </a>
               </li>
+
+
             </ul>
           </li> --}}
 

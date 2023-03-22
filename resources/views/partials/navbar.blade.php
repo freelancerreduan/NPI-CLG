@@ -1,4 +1,34 @@
-<header class="sticky-top text-white" style="background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9))">
+<!-- Top Header Section -->
+<nav class="navbar navbar-expand-lg bg-dark text-white">
+    <div class="container-fluid">
+      <div class="team-social">
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/reduan97" class="text-white"role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/reduan97" class="text-white"role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/reduan97" class="text-white"role="button"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="ms-auto d-flex">
+        <li class="main-menu-li d-inline ">
+          <a href="" class="">
+            Account
+          </a>
+        </li>
+        <li class="main-menu-li">
+          <a href="login-regi.html"><i class="fas fa-user-circle fa-2x " style="margin-left: 13px ; display: inline; "></i></a>
+        </li>
+        <!-- <h1 class=" text-white d-inline">Reduan</h1> -->
+      </div>
+      </div>
+    </div>
+  </nav>
+<!--===============header Start===============-->
+
+
+
+
+<!-- Station This is Section -->
+  <!-- Top Bar -->
+  <!-- Header Area Start -->
+  <header class="sticky-top text-white" style="background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9))">
     <div class=" ">
       <div class="container position-relative">
         <div class="row">
@@ -10,9 +40,13 @@
           <div class="col align-self-center d-none d-lg-block">
             <div class="main-menu">
               <ul>
-                <li class="dropdown"><a href="">Home <i class="pe-7s-angle-down"></i></a>
+                <li class="dropdown"><a href="#">Home <i class="pe-7s-angle-down"></i></a>
+                  <ul class="sub-menu">
+                      <li><a href="index.html">Home 1</a></li>
+                      <li><a href="index-2.html">Home 2</a></li>
+                  </ul>
                 </li>
-                {{-- <li class="dropdown position-static"><a href="#"> Category <i
+                <li class="dropdown position-static"><a href="#"> Category <i
                   class="pe-7s-angle-down"></i></a>
                     <ul class="mega-menu d-block">
                         <li class="d-flex">
@@ -69,8 +103,10 @@
                         <li>
                           <ul class="menu-banner w-100">
                             <li>
-                              <a class="p-0" href="shop-left-sidebar.html"><img
-                                class="img-responsive w-100" src="assets/images/banner/7.jpg" alt=""></a></li>
+                                <a class="p-0" href="shop-left-sidebar.html">
+                                    <img class="img-responsive w-100" src="assets/images/banner/7.jpg" alt="">
+                                </a>
+                            </li>
                             <li>
                               <a class="p-0" href="shop-left-sidebar.html"><img
                                 class="img-responsive w-100"
@@ -84,8 +120,8 @@
                           </ul>
                         </li>
                     </ul>
-                </li> --}}
-                {{-- <li class="dropdown "><a href="blog-pag.html">Blogs <i class="pe-7s-angle-down text-dark"></i></a>
+                </li>
+                <li class="dropdown "><a href="blog-pag.html">Blogs <i class="pe-7s-angle-down text-dark"></i></a>
                   <ul class="sub-menu">
                     <li><a href="blog-grid.html">Blog Grid Page</a></li>
                     <li><a href="blog-grid-left-sidebar.html">Grid Left Sidebar</a></li>
@@ -94,16 +130,17 @@
                     <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
                     <li><a href="blog-single-right-sidebar.html">Single Right Sidbar</a>
                   </ul>
-                </li> --}}
-                {{-- <li><a href="">About us</a></li>
-                <li> <a href="index.html">Contact </a> </li> --}}
+                </li>
+                <li><a href="">About us</a></li>
+                <li> <a href="index.html">Contact </a> </li>
               </ul>
             </div>
           </div>
             <!-- Header Action Start -->
           <div class="col col-lg-auto align-self-center pl-0">
             <div class="header-actions">
-              <a href="{{ route('login') }}" class="header-action-btn login-btn" >Sign In</a>
+              <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
+                data-bs-target="#loginActive">Sign In</a>
               <!-- Single Wedge Start -->
               <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
                 <i class="fas fa-search"></i></a>
@@ -130,3 +167,24 @@
       </div>
     </div>
   </header>
+  <!-- Header Area End -->
+  <!-- Search Modal Start -->
+  <div class="modal popup-search-style" id="searchActive">
+    <button type="button" class="close-btn" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+    <div class="modal-overlay">
+      <div class="modal-dialog p-0" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class="text-danger">Search Your Product</h2>
+            <form class="navbar-form position-relative" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search here...">
+              </div>
+              <button type="submit" class="submit-btn"><i class="fas fa-search"> </i> </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Search Modal End -->

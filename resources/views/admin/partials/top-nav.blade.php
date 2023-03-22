@@ -7,6 +7,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('admin.index') }}" class="nav-link">Home</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('frontend.index') }}" target="_blank" class="nav-link">View Site</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->

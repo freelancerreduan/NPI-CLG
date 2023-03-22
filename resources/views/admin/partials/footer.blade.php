@@ -45,8 +45,25 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('backend') }}/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('backend') }}/dist/js/demo.js"></script>
+{{-- <script src="{{ asset('backend') }}/dist/js/demo.js"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('backend') }}/dist/js/pages/dashboard.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if (session('success'))
+    <script>
+            Swal.fire({
+                position: 'top-end',
+                toast:true,
+                icon: 'success',
+                title: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            })
+    </script>
+@endif
+
+
+@yield('scripts')
 </body>
 </html>

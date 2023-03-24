@@ -139,8 +139,7 @@
             <!-- Header Action Start -->
           <div class="col col-lg-auto align-self-center pl-0">
             <div class="header-actions">
-              <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
-                data-bs-target="#loginActive">Sign In</a>
+              <a href="{{ route('login') }}" class="header-action-btn login-btn">Sign In</a>
               <!-- Single Wedge Start -->
               <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
                 <i class="fas fa-search"></i></a>

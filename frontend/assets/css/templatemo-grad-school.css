@@ -133,7 +133,7 @@ a.menu-link { display: none; }
   nav[role="navigation"] li.active a {
       color: #f5a425;
   }
-  
+
   @media screen and (min-width: 951px) {
     .js nav[role="navigation"] {
       max-height: none;
@@ -321,7 +321,7 @@ a.menu-link { display: none; }
 
 #bg-video {
     min-width: 100%;
-    min-height: 100vh;
+    min-height: 65vh;
     max-width: 100%;
     max-height: 100vh;
     object-fit: cover;
@@ -619,7 +619,7 @@ section.why-us {
 }
 
 @media screen and (max-width: 767px) {
-  
+
   .tabs-content {
       text-align: center;
   }
@@ -1486,7 +1486,7 @@ section.contact form {
 }
 
 
-@media screen and (max-width: 767px) {  
+@media screen and (max-width: 767px) {
   section.contact form {
       margin-bottom: 30px;
   }

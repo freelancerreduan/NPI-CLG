@@ -1,5 +1,5 @@
 <div data-aos="fade-up"data-aos-duration="1500">
-    <section class="section video" data-section="section5">
+    <section class="section video py-5" data-section="section5">
       <div class="container">
         <div class="row">
           <div class="col-md-6 align-self-center">

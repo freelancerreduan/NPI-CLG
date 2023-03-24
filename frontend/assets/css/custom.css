@@ -4,7 +4,7 @@ FB ID       : fb.com/reduan97
 Instagramn  : instagram.com/freelancerredaun
 Website     : freelancerreduan.github.io/web20
 Website     : freelancerreduan.com
-Phone Number: +880 13185-32992 
+Phone Number: +880 13185-32992
 =========================================*/
 
 
@@ -105,7 +105,7 @@ li{
 .footer-paralax {
     padding: 4rem 0 0 0;
   }
-  
+
   .contact-mf {
     margin-top: 4rem;
   }
@@ -245,7 +245,7 @@ li{
       transform: rotate(360deg);
     }
   }
-  
+
   @keyframes animate-loading {
     0% {
       transform: rotate(0deg);
@@ -561,7 +561,7 @@ li{
     font-size: 16px;
   }
   .main-banner .caption h6 {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 300;
   }
   .titlepage h2 {
@@ -574,7 +574,7 @@ li{
   .important_bg .important_box span {
     font-size: 14px !important;
     line-height: 12px !important;
-    padding-top: 18px !important;
+    padding-top: 0 !important;
   }
   .important_bg .important_box h3 {
     color: #f4b328 !important;
@@ -1143,7 +1143,7 @@ a, button {
 }
 /* Copyright */
 .footer .copyright{
-	
+
 }
 .footer .copyright .inner{
 	border-top:1px solid #eeeeee3d;

@@ -1,18 +1,17 @@
 <div data-aos="fade-up"data-aos-duration="1500">
     <section class="section main-banner" id="top" data-section="abt">
-      <div id="important" class="important" >
+      <div id="important" class="important pt-2" >
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <div class="titlepage">
+              <div class="titlepage pb-3">
                 <h2>Some <strong class="yellow text-secondary">important </strong>facts</h2>
-                <span>luptatum. Libero eligendi molestias iure error animi totam laudantium, aspernatur similique id eos a
-                t consectetur illo culpa,</span>
+                <span>luptatum. Libero eligendi molestias iure error animi totam laudantium,</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="important_bg">
+        <div class="important_bg py-3">
           <div class="container">
             <div class="row">
                 @foreach ($counters as $count)

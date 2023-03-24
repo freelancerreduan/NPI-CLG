@@ -1,11 +1,11 @@
 <div data-aos="fade-up"data-aos-duration="1500">
-    <section class="section coming-soon" id="apply" data-section="apply-now">
+    <section class="section coming-soon py-5" id="apply" data-section="apply-now">
       <div class="container">
         <div class="row">
           <div class="col-md-7 col-xs-12">
             <div class="continer centerIt" data-aos="fade-right" data-aos-offset="300"data-aos-easing="ease-in-sine">
               <div>
-                <h6 class="d-inline text-white"> BOOK A SEAT------ </h6>
+                <h6 class="d-inline text-white text-sm-center"> BOOK A SEAT------ </h6>
                 <h2 class="text-warning">Book A Seat</h2>
                 <p class="text-white">
                   Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor <br>

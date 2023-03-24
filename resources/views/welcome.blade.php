@@ -6,8 +6,9 @@
     @if (count($counters) > 0)
         @include('partials.counter')
     @endif
-
-    @include('partials.subjects')
+    @if (count(categories('top', 3)) > 0)
+        @include('partials.subjects')
+    @endif
     @include('partials.apply-now')
     @include('partials.teachers')
     @include('partials.blog')

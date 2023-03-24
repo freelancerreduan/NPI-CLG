@@ -12,5 +12,7 @@ class Category extends Model
         'name',
         'slug',
         'p_count',
+        'image',
+        'position',
     ];
 }

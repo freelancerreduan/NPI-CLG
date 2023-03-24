@@ -17,6 +17,8 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('slug');
+            $table->string('image');
+            $table->enum('position', array('main_menu', 'top', 'normal'));
             $table->unsignedBigInteger('p_count')->default(0);
             $table->timestamps();
         });

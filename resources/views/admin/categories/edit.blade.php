@@ -29,7 +29,7 @@
                     <div class="card-header">
                       <h3 class="card-title">Edit Form</h3>
                     </div>
-                    <form class="form-horizontal" action="{{ route('category.update', $category->id) }}" method="POST">
+                    <form class="form-horizontal" action="{{ route('category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                       <div class="card-body">
@@ -42,6 +42,36 @@
                             @enderror
                           </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="position" class="col-sm-3 col-form-label">Position</label>
+                            <div class="col-sm-9">
+                              <select name="position" id="position" class="form-control">
+                                <option {{ $category->position == 'main_menu' ? 'selected' : '' }} value="main_menu">Main Menu</option>
+                                <option {{ $category->position == 'top' ? 'selected' : '' }} value="top">Top</option>
+                                <option {{ $category->position == 'normal' ? 'selected' : '' }} value="normal">Normal</option>
+                              </select>
+                              @error('position')
+                                  <span class="text-danger">{{ $message }}</span>
+                              @enderror
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label for="position" class="col-sm-3 col-form-label">Image</label>
+                            <div class="col-sm-9">
+                              <input type="file" class="form-control" name="image">
+                              @error('image')
+                                  <span class="text-danger">{{ $message }}</span>
+                              @enderror
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="position" class="col-sm-3 col-form-label">Image</label>
+                            <div class="col-sm-9">
+                              <img src="{{ asset($category->image) }}" alt="" width="200">
+                            </div>
+                          </div>
                       </div>
                       <!-- /.card-body -->
                       <div class="card-footer">

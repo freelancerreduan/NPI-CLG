@@ -15,6 +15,14 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
+            $table->enum('section', array('top', 'trending', 'latest'))->default('trending');
+            $table->string('title');
+            $table->string('slug');
+            $table->string('image');
+            $table->longText('description');
+            $table->enum('status', array('pending', 'approved', 'rejected'))->default('pending');
             $table->timestamps();
         });
     }

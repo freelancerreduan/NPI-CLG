@@ -90,8 +90,8 @@
           </li>
 
 
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item {{  Request::url() == route('blog.index') || Request::url() == route('blog.create') ? 'menu-is-opening menu-open' : ''  }}">
+            <a href="#" class="nav-link {{  Request::url() == route('blog.index') || Request::url() == route('blog.create') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Blog
@@ -100,14 +100,14 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="pages/UI/general.html" class="nav-link">
+                    <a href="{{ route('blog.index') }}" class="nav-link {{ Request::url() == route('blog.index') ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>List Blog</p>
                     </a>
                 </li>
 
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="{{ route('blog.create') }}" class="nav-link {{ Request::url() == route('blog.create') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create Blog</p>
                 </a>
@@ -115,7 +115,7 @@
 
 
             </ul>
-          </li> --}}
+          </li>
 
 
 

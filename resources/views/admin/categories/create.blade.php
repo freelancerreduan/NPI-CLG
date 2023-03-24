@@ -29,7 +29,7 @@
                     <div class="card-header">
                       <h3 class="card-title">Create Form</h3>
                     </div>
-                    <form class="form-horizontal" action="{{ route('category.store') }}" method="POST">
+                    <form class="form-horizontal" action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                       <div class="card-body">
                         <div class="form-group row">
@@ -41,6 +41,30 @@
                             @enderror
                           </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="position" class="col-sm-3 col-form-label">Position</label>
+                            <div class="col-sm-9">
+                              <select name="position" id="position" class="form-control">
+                                <option {{ old('position') == 'main_menu' ? 'selected' : '' }} value="main_menu">Main Menu</option>
+                                <option {{ old('position') == 'top' ? 'selected' : '' }} value="top">Top</option>
+                                <option {{ old('position') == 'normal' ? 'selected' : '' }} value="normal">Normal</option>
+                              </select>
+                              @error('position')
+                                  <span class="text-danger">{{ $message }}</span>
+                              @enderror
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label for="position" class="col-sm-3 col-form-label">Image</label>
+                            <div class="col-sm-9">
+                              <input type="file" class="form-control" name="image">
+                              @error('image')
+                                  <span class="text-danger">{{ $message }}</span>
+                              @enderror
+                            </div>
+                          </div>
 
 
                       </div>

@@ -40,7 +40,7 @@
             <a class="nav-link ms-md-5 me-4 active navber-item-a " aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  mx-md-4 navber-item-a " aria-current="page" href="#">Book</a>
+            <a class="nav-link  mx-md-4 navber-item-a " aria-current="page" href="{{ route('frontend.book.index') }}">Book</a>
           </li>
           <li class="nav-item">
             <a class="nav-link  mx-md-4 navber-item-a " aria-current="page" href="#">Blog</a>

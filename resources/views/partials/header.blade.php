@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="assets/img/circle img .png" rel="icon" type="image/x-icon"/>
     <!-- Slick Slider Hear -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -20,5 +21,6 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/lightbox.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/custom.css">
     <title>NPI College</title>
+    @yield('styles')
   </head>
 <body>

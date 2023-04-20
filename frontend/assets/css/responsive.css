@@ -1,0 +1,219 @@
+
+
+
+
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+  }
+  nav[role="navigation"].active {
+    height: 3em !important;
+  }
+  .main-header .logo a {
+    font-size: 16px;
+  }
+  .main-banner .caption h6 {
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .titlepage h2 {
+    font-size: 29px !important;
+  }
+  .important .titlepage span {
+    font-size: 10px ;
+    padding: 0 48px 0 48px !important;
+  }
+  .header-actions .header-action-btn i {
+    font-size: 25px;
+  }
+
+}
+
+
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .main-menu-li{
+    display: block;
+  }
+  .modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+  .main-header .logo a {
+    font-size: 16px;
+  }
+  .main-banner .caption h6 {
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .titlepage h2 {
+    font-size: 29px !important;
+  }
+  .important .titlepage span {
+    font-size: 13px !important;
+    padding: 0 48px 0 48px !important;
+  }
+  .important_bg .important_box span {
+    font-size: 14px !important;
+    line-height: 12px !important;
+    padding-top: 18px !important;
+  }
+  .important_bg .important_box h3 {
+    color: #f4b328 !important;
+    font-size: 20px !important;
+    line-height: 46px !important;
+  }
+  .main-about-section {
+    height: 212vh !important;
+  }
+  /* Book Page Style */
+  .sub-btn {
+    /* position: absolute; */
+    left: 73% !important;
+    top: 6.5%;
+  }
+  .love-icon{
+    background-color: #FFAD32;
+    width: 93% !important;
+    margin-top: 10px !important;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Small Device */
+@media only screen and (min-width: 400px) {
+  .header-actions .header-action-btn i {
+    font-size: 22px;
+  }
+  .main-about-section {
+    height: 167vh !important;
+  }
+  .header-actions .header-action-btn.login-btn {
+    font-size: 13px;
+  }
+  .header-actions > * + * {
+    margin-left: 10px;
+  }
+}
+
+
+
+@media only screen and (min-width: 390px){
+  .main-about-section {
+    height: 173vh !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .main-menu .main-menu-li a {
+    padding: 10px 1%;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: #fff;
+    border: 2px solid transparent;
+    transition: all 0.5s;
+  }
+  .main-menu .main-menu-li {
+    margin-left: 33px !important;
+  }
+  .header-main {
+    padding: 15px 0;
+  }
+  .box-shadow-full {
+    padding: 3rem;
+  }
+  .main-about-section {
+    height: 72vh !important;
+  }
+  .sub-btn {
+    position: absolute;
+    left: 80% !important;
+    top: 6.5%;
+  }
+
+}
+
+@media only screen and (min-width: 360px) and (max-height:800px){ 
+  .main-about-section {
+    /* height: 200vh !important; */
+  }
+  
+}
+
+
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .main-menu {
+    float: left;
+    padding: 0 0 0 2% !important;
+  }
+  .main-header .logo a {
+    font-size: 27px !important;
+  }
+  .main-menu .main-menu-li {
+    margin-left: 9px !important;
+  }
+  .main-about-section {
+    height: 122vh !important;
+  }
+}
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .important .titlepage span {
+    font-size: 14px !important;
+    padding: 0 48px 0 48px !important;
+  }
+  .main-about-section {
+    height: 100vh !important;
+  }
+  .sub-btn {
+    position: absolute;
+    left: 87% !important;
+    top: 6.5%;
+  }
+  .main-about-section {
+    height: 122vh !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

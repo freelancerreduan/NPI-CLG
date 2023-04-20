@@ -17,7 +17,6 @@ body {
 /* Basic */
 
 a {
-	color: white;
     text-decoration: none;
 }
 
@@ -321,7 +320,7 @@ a.menu-link { display: none; }
 
 #bg-video {
     min-width: 100%;
-    min-height: 65vh;
+    min-height: 100vh;
     max-width: 100%;
     max-height: 100vh;
     object-fit: cover;
@@ -771,7 +770,6 @@ section.coming-soon form {
     padding: 60px 40px;
     width: 100%;
     text-align: center;
-    border-radius: 10px !important;
 }
 
 section.coming-soon form input {

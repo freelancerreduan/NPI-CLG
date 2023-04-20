@@ -77,7 +77,7 @@ class AdminBookController extends Controller
         foreach ($pages as $key => $page) {
             $path = 'uploads/pages/';
             $imgName = time().Str::random(5).'.'.$page->getClientOriginalExtension();
-            Image::make($page)->resize(310, 450)->save(base_path($path.$imgName));
+            Image::make($page)->resize(2560, 1709)->save(base_path($path.$imgName));
 
             Page::insert([
                 'book_id' => $bookId,

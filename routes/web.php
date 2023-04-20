@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminBookController;
 use App\Http\Controllers\Admin\AdminCounterController;
 use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\FrontendBookController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Saller\SallerHomeController;
 use App\Http\Controllers\User\userHomeController;
@@ -41,6 +42,11 @@ Route::get('/reboot', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
+
+
+Route::get('books', [FrontendBookController::class, 'index'])->name('frontend.book.index');
+Route::post('book/favorite/', [FrontendBookController::class, 'favorite'])->name('frontend.book.favorite');
+Route::get('book/{slug}', [FrontendBookController::class, 'details'])->name('frontend.book.details');
 
 // All Admin routes
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'isAdmin']], function () {

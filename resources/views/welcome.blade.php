@@ -2,7 +2,6 @@
 @section('content')
     @include('partials.navbar')
     @include('partials.banner')
-
     @if (count($counters) > 0)
         @include('partials.counter')
     @endif

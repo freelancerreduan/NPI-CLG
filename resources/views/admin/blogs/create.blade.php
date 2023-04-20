@@ -80,9 +80,9 @@
                                 <label for="status">Status</label>
                                 <select name="status" id="status" class="form-control">
                                     <option value="">Select Status</option>
-                                    <option {{ old('pending') == 'pending' ? 'selected' : '' }} value="pending">Pending</option>
-                                    <option {{ old('approved') == 'approved' ? 'selected' : '' }} value="approved">Publish</option>
-                                    <option {{ old('rejected') == 'rejected' ? 'selected' : '' }} value="rejected">Rejected</option>
+                                    <option {{ old('status') == 'pending' ? 'selected' : '' }} value="pending">Pending</option>
+                                    <option {{ old('status') == 'approved' ? 'selected' : '' }} value="approved">Publish</option>
+                                    <option {{ old('status') == 'rejected' ? 'selected' : '' }} value="rejected">Rejected</option>
                                 </select>
                                 @error('status')
                                     <span class="text-danger">{{ $message }}</span>

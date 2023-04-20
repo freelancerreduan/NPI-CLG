@@ -84,10 +84,50 @@
                   <p>Add Counter</p>
                 </a>
               </li>
+            </ul>
+          </li>
+
+          <li class="nav-item {{  Request::url() == route('book.index') || Request::url() == route('book.create') ? 'menu-is-opening menu-open' : ''  }}">
+            <a href="#" class="nav-link {{  Request::url() == route('book.index') || Request::url() == route('book.create') ? 'active' : ''  }}">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Books
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('book.index') }}" class="nav-link {{ Request::url() == route('book.index') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Book Lists</p>
+                    </a>
+                </li>
+
+              <li class="nav-item">
+                <a href="{{ route('book.create') }}" class="nav-link {{ Request::url() == route('book.create') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Book</p>
+                </a>
+              </li>
 
 
             </ul>
           </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           <li class="nav-item {{  Request::url() == route('blog.index') || Request::url() == route('blog.create') ? 'menu-is-opening menu-open' : ''  }}">

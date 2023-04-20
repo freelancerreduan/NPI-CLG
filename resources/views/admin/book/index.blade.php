@@ -10,12 +10,12 @@
         <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1 class="m-0">Blog List</h1>
+            <h1 class="m-0">Books List</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Blog List</li>
+                <li class="breadcrumb-item active">Books List</li>
             </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -29,36 +29,40 @@
                 <thead>
                     <tr>
                         <th>SI</th>
-                        <th>Author</th>
+                        <th>Thumbnail</th>
+                        <th>Name</th>
+                        <th>Technology</th>
+                        <th>Simister</th>
                         <th>Title</th>
-                        <th class="text-nowrap">Category Name</th>
+                        <th>Regulations</th>
+                        <th>Published_by</th>
+                        <th>Price</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($blogs as $blog)
+                    @foreach ($books as $book)
                         <tr>
                             <td>{{ ++$loop->index }}</td>
-                            <td class="text-nowrap">
-                                <div class="d-flex justify-cnter-start align-items-center">
-                                    <img src="{{ asset($blog->blogWithUserRelation->profile) }}" alt="" width="50">
-                                    <div class="ml-1">
-                                        <p class="m-0 p-0">{{ $blog->blogWithUserRelation->name }}</p>
-                                        <p class="m-0 p-0"> {{ \Carbon\Carbon::parse($blog->created_at)->diffForHumans() }}</p>
-                                    </div>
-                                </div>
+                            <td>
+                                <img src="{{ asset($book->thumbnail) }}" alt="" width="100">
                             </td>
-                            <td>{{ $blog->title }}</td>
-                            <td>{{ $blog->blogWithCategoryRelation->name }}</td>
-                            <td>{{ $blog->status }}</td>
-                            <td class="text-nowrap">
-                                <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-sm btn-primary d-inline">Edit</a>
-                                <form action="{{ route('blog.destroy', $blog->id) }}" class="d-inline" method="POST">
+                            <td class="align-middle"><b>{{ $book->name }}</b></td>
+                            <td class="align-middle text-nowrap"><b>{{ $book->technology }}</b></td>
+                            <td class="align-middle"><b>{{ $book->simister }}</b></td>
+                            <td class="align-middle text-nowrap"><b>{{ $book->title }}</b></td>
+                            <td class="align-middle"><b>{{ $book->regulations }}</b></td>
+                            <td class="align-middle"><b>{{ $book->published_by }}</b></td>
+                            <td class="align-middle text-nowrap"><b>{{ $book->price }} TK</b></td>
+                            <td class="align-middle"><b>{{ $book->status }}</b></td>
+                            <td class="align-middle">
+                                <a href="{{ route('book.edit', $book->id) }}" class="btn btn-sm btn-primary d-inline">Edit</a>
+                                <form action="{{ route('book.destroy', $book->id) }}" class="d-inline" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-danger"
-                                    onclick="return confirm('Are you sure you want to delete this post?');">Delete</button>
+                                    onclick="return confirm('Are you sure you want to delete this items?');">Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -94,4 +98,3 @@
     });
   </script>
 @endsection
-

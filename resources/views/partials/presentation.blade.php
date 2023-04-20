@@ -4,8 +4,8 @@
         <div class="row">
           <div class="col-md-6 align-self-center">
             <div class="left-content">
-              <span>Our presentation is for you</span>
-              <h4>Watch the video to learn more about<em> National Polytechnic Institute</em></h4>
+              <span style="font-family: cursive ;">Our presentation is for you</span>
+              <h4 style="font-family: cursive ;">Watch the video to learn more about<em> National Polytechnic Institute</em></h4>
               <p class="">National Polytechnic Institute (NPI) is a well-respected higher education institution in manikgonj. It is known for offering high-quality education in technical and scientific fields, preparing students to become leaders in their respective industries. </p>
               <p>Overall, National Polytechnic Institute is a valuable resource for those looking to further their education and careers in science and technology. Its commitment to excellence, innovation, and social responsibility make it a standout institution in Manikgonj.</a>
               <br>

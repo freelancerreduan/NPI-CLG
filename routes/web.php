@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\AdminBookController;
 use App\Http\Controllers\Admin\AdminCounterController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\FrontendController;
@@ -47,6 +48,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'isAdmin']], functio
     Route::resource('category', AdminCategoryController::class);
     Route::resource('blog', AdminBlogController::class);
     Route::resource('counter', AdminCounterController::class);
+    Route::resource('book', AdminBookController::class);
 });
 
 

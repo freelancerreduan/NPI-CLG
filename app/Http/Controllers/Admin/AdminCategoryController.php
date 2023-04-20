@@ -60,7 +60,8 @@ class AdminCategoryController extends Controller
             'slug' => Str::slug($request->name),
             'position' => $request->position,
             'image' => $path.$imgName,
-            'created_at' => Carbon::now()
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
         return back()->with('success', 'Created Successfully');
     }

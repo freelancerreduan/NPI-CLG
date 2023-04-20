@@ -65,8 +65,9 @@ class AdminBlogController extends Controller
             'section' => $request->section,
             'status' => $request->status,
             'image' => $path.$imgName,
-            'description' => $request->status,
-            'created_at' => Carbon::now()
+            'description' => $request->description,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         if ($insert) {
@@ -108,7 +109,41 @@ class AdminBlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required | string | max:255',
+            'category_id' => 'required',
+            'section' => 'required',
+            'status' => 'required',
+            'image' => 'image | mimes:jpg,png,jpeg',
+            'description' => 'required | string',
+        ], [
+            'category_id.required' => 'The category field is required.'
+        ]);
+        $blog = Blog::where('id', $id)->first();
+        Category::where('id', $blog->category_id)->decrement('p_count', 1);
+
+        if ($request->hasFile('image')) {
+            unlink(base_path($blog->image));
+
+            $path = 'uploads/blogs/';
+            $imgName = time().Str::random(5).'.'.$request->file('image')->getClientOriginalExtension();
+            Image::make($request->file('image'))->resize(500, 334)->save(base_path($path.$imgName));
+
+            $blog->update([
+                'image' => $path.$imgName
+            ]);
+        }
+        $updated = $blog->update([
+            'user_id' => auth()->user()->id,
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'category_id' => $request->category_id,
+            'section' => $request->section,
+            'status' => $request->status,
+            'description' => $request->description,
+        ]);
+        Category::where('id', $request->category_id)->increment('p_count', 1);
+        return back()->with('success', 'Updated Successfully');
     }
 
     /**
@@ -119,6 +154,9 @@ class AdminBlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::where('id', $id)->first();
+        unlink(base_path($blog->image));
+        $blog->delete();
+        return back()->with('success', 'Deleted Successfully');
     }
 }

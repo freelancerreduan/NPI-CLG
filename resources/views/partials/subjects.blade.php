@@ -2,15 +2,15 @@
     <div class="container-fluid py-0 category-bg">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5">
-                <h5 class="text-primary text-uppercase mb-3 " style="letter-spacing: 5px;">Subjects</h5>
-                <h1 style="color:white">Explore Top Depertments</h1>
+                <h5 class="text-primary text-uppercase mb-3 " style="letter-spacing: 5px; font-family: cursive ;">Subjects</h5>
+                <h1 style="color:white; font-family: cursive ;">Explore Top Depertments</h1>
             </div>
             <div class="row">
                 @foreach (categories('top', 3) as $category)
                     <div class="col-md-4">
                         <div class="cat-item position-relative overflow-hidden rounded mb-2" data-aos="fade-right" data-aos-duration="1500">
                             <img class="img-fluid" src="{{ asset($category->image) }}" alt="">
-                            <a class="cat-overlay text-white text-decoration-none" href="">
+                            <a class="cat-overlay text-white text-decoration-none" href="" style="font-family: cursive ;">
                                 <h4 class="text-white font-weight-medium">{{ $category->name }}</h4>
                             </a>
                         </div>
@@ -24,7 +24,7 @@
                 <div class="col-md-3">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2" data-aos="fade-right" data-aos-duration="1500">
                         <img class="img-fluid" src="{{ asset($category->image) }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
+                        <a class="cat-overlay text-white text-decoration-none" href="" style="font-family: cursive ;">
                             <h4 class="text-white font-weight-medium">{{ $category->name }}</h4>
                         </a>
                     </div>

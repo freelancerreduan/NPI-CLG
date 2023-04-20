@@ -44,7 +44,7 @@
                       <div class="card-body">
                         <div class="form-group row">
                           <label for="title" class="">Title</label>
-                            <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{{ old('title') ? old('title') : $blog->title }}">
+                            <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{{ $blog->title ?? old('title') }}">
                             @error('title')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -99,9 +99,13 @@
                               @enderror
                           </div>
 
+                          <div class="form-group">
+                              <img src="{{ asset($blog->image) }}" alt="" width="200">
+                          </div>
+
                           <div class="form-group row">
-                            <label for="image" class="">Description</label>
-                              <textarea name="description" id="description" class="form-control">{{ old('description') ? old('description') : $blog->description }}</textarea>
+                            <label for="description" class="">Description</label>
+                              <textarea name="description" id="description" class="form-control">{{ $blog->description ?? old('description') }}</textarea>
                               @error('image')
                                   <span class="text-danger">{{ $message }}</span>
                               @enderror

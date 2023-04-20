@@ -5,12 +5,12 @@
           <div class="col-md-7 col-xs-12">
             <div class="continer centerIt" data-aos="fade-right" data-aos-offset="300"data-aos-easing="ease-in-sine">
               <div>
-                <h6 class="d-inline text-white text-sm-center"> BOOK A SEAT------ </h6>
-                <h2 class="text-warning">Book A Seat</h2>
+                <h6 class="d-inline text-white text-sm-center" > BOOK A SEAT------ </h6>
+                <h2 class="text-warning" style="font-family: cursive ;">Book A Seat</h2>
                 <p class="text-white">
                   Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor <br>
                   Labore eos amet dolor amet diam <br> Etsea et sit dolor amet ipsum Diam dolor diam elitripsum vero.</p>
-                <h4>Admission  <em>Time Over </em> </h4>
+                <h4 style="font-family: cursive ;">Admission  <em>Time Over </em> </h4>
                 <div class="counter">
                   <div class="days">
                     <div class="value">00</div>
@@ -39,7 +39,7 @@
           <div class="col-md-5">
             <div class="right-content">
               <div class="top-content">
-                <h3 class="text-center text-warning mb-4">Apply Now</h3>
+                <h3 class="text-center text-warning mb-4" style="font-family: cursive ;">Apply Now</h3>
               </div>
               <form id="contact" action="" method="get" >
                 <div class="row">
@@ -60,7 +60,7 @@
                   </div>
                   <div class="col-md-12">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="">Confrime</button>
+                      <button type="submit" id="form-submit" class="" style="font-family: cursive ;">Confrime</button>
                     </fieldset>
                   </div>
                 </div>

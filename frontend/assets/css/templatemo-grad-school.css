@@ -771,6 +771,7 @@ section.coming-soon form {
     padding: 60px 40px;
     width: 100%;
     text-align: center;
+    border-radius: 10px !important;
 }
 
 section.coming-soon form input {

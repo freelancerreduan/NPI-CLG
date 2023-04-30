@@ -2,6 +2,7 @@
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Page;
 
 if (!function_exists('categories')) {
     function categories($position, $limit)
@@ -22,6 +23,19 @@ if (!function_exists('blogs')) {
         $blogs = Blog::with('blogWithUserRelation', 'blogWithCategoryRelation')->where('section', $section)->limit($limit)->orderBy('id', 'DESC')->get();
         if( $blogs ){
             return $blogs;
+        }else{
+        return false;
+        }
+    }
+}
+
+
+if (!function_exists('pages')) {
+    function pages($bookId)
+    {
+        $pages = Page::where('book_id', $bookId)->get();
+        if( $pages ){
+            return $pages;
         }else{
         return false;
         }

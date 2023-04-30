@@ -41,7 +41,7 @@
 
 
   <!-- Book list -->
-  <section class="book-item-section py-5">
+  <section class="book-item-section py-5" style=" background: aquamarine;">
     <div class="container-fluid">
       <div class="container">
         <div class="row">
@@ -73,11 +73,13 @@
                         @php
                             $like = DB::table('likes')->where([['user_id', auth()->user()->id], ['book_id', $book->id]])->exists();
                         @endphp
+
                         @if ($like)
-                            <i onclick="like({{ $book->id }}, 1);" class="fas fa-heart text-danger text-center py-2 rounded love-icon ms-1"></i>
+                            <i onclick="like({{ $book->id }}, this);" status="like" class="fas fa-heart text-danger text-center py-2 rounded love-icon ms-1"></i>
                         @else
-                            <i onclick="like({{ $book->id }}, 0);" class="far fa-heart text-white text-center py-2 rounded love-icon ms-1"></i>
+                            <i onclick="like({{ $book->id }}, this);" status="unlike" class="far fa-heart text-white text-center py-2 rounded love-icon ms-1"></i>
                         @endif
+
                     @else
                         <i onclick="window.location.href='{{ route('login') }}'" class="far fa-heart text-white text-center py-2 rounded love-icon ms-1"></i>
                     @endauth
@@ -93,20 +95,24 @@
 @endsection
 @section('scripts')
   <script>
-    function like(book_id, like){
+    function like(book_id, el){
         var bookId = book_id;
-        var like = like;
         $.ajax({
                 type: 'POST',
                 data: {bookId:bookId},
                 url:'{{ route('frontend.book.favorite') }}',
                 success: function (data){
                     if (data == 'likeDone') {
-                        if (like == 1) {
-
-                        }
+                      if ($(el).attr('status') == 'unlike') {
+                        $(el).attr('status', 'like');
+                        $(el).addClass('fas text-danger');
+                        $(el).removeClass('far text-white');
+                      } else {
+                        $(el).attr('status', 'unlike');
+                        $(el).addClass('far text-white');
+                        $(el).removeClass('fas text-danger');
+                      }
                     }
-
                 }
             });
     }

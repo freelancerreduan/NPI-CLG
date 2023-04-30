@@ -18,7 +18,12 @@ class FrontendBookController extends Controller
     public function details($slug)
     {
         $book = Book::where('slug', $slug)->first();
-        return $book;
+        if ($book) {
+            $relatedBooks = Book::where('id', '!=', $book->id)->orderBy('id', 'DESC')->limit(2)->get(['title', 'slug', 'thumbnail', 'simister']);
+            return view('books.book-details', compact('book', 'relatedBooks'));
+        }else{
+            abort(404);
+        }
     }
 
     public function favorite(Request $request)

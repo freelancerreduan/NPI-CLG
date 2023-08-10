@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Institute;
 
+use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use image;
+use Image;
 
-class BlogController extends Controller
+class InstituteBlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +19,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs  = Blog::orderBy('id', 'DESC')->get();
-        return view('blogs.index', compact('blogs'));
+        $blogs = Blog::where('user_id', auth()->user()->id)->orderBy('created_at', 'DESC')->get();
+        return view('institute.blogs.index', compact('blogs'));
     }
 
     /**
@@ -30,7 +31,7 @@ class BlogController extends Controller
     public function create()
     {
         $categories = Category::orderBy('name', 'ASC')->get();
-        return view('blogs.create', compact('categories'));
+        return view('institute.blogs.create', compact('categories'));
     }
 
     /**
@@ -45,7 +46,6 @@ class BlogController extends Controller
             'title' => 'required | string | unique:blogs',
             'category_id' => 'required',
             'section' => 'required',
-            'status' => 'required',
             'image' => 'required | image | mimes:jpg,png,jpeg',
             'description' => 'required | string',
         ], [
@@ -62,7 +62,6 @@ class BlogController extends Controller
             'slug' => Str::slug($request->title),
             'category_id' => $request->category_id,
             'section' => $request->section,
-            'status' => $request->status,
             'image' => $path.$imgName,
             'description' => $request->description,
             'created_at' => Carbon::now(),
@@ -72,7 +71,7 @@ class BlogController extends Controller
         if ($insert) {
             Category::where('id', $request->category_id)->increment('p_count', 1);
         }
-        return back()->with('success', 'Created Successfully');
+        return back()->with('success', 'Added Successfully');
     }
 
     /**
@@ -94,9 +93,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $blog = Blog::where('id', $id)->first();
+        $blog = Blog::where([['id', $id], ['user_id', auth()->user()->id]])->first();
         $categories = Category::orderBy('name', 'ASC')->get();
-        return view('blogs.edit', compact('blog', 'categories'));
+        return view('institute.blogs.edit', compact('blog', 'categories'));
     }
 
     /**
@@ -112,13 +111,12 @@ class BlogController extends Controller
             'title' => 'required | string | max:255',
             'category_id' => 'required',
             'section' => 'required',
-            'status' => 'required',
             'image' => 'image | mimes:jpg,png,jpeg',
             'description' => 'required | string',
         ], [
             'category_id.required' => 'The category field is required.'
         ]);
-        $blog = Blog::where('id', $id)->first();
+        $blog = Blog::where([['id', $id], ['user_id', auth()->user()->id]])->first();
         Category::where('id', $blog->category_id)->decrement('p_count', 1);
 
         if ($request->hasFile('image')) {
@@ -138,7 +136,7 @@ class BlogController extends Controller
             'slug' => Str::slug($request->title),
             'category_id' => $request->category_id,
             'section' => $request->section,
-            'status' => $request->status,
+            'status' => 'pending',
             'description' => $request->description,
         ]);
         Category::where('id', $request->category_id)->increment('p_count', 1);
@@ -153,7 +151,7 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $blog = Blog::where('id', $id)->first();
+        $blog = Blog::where([['id', $id], ['user_id', auth()->user()->id]])->first();
         unlink(base_path($blog->image));
         $blog->delete();
         return back()->with('success', 'Deleted Successfully');

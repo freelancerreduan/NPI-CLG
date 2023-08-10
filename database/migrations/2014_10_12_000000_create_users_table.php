@@ -17,10 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->unsignedBigInteger('ins_id')->nullable();
+            $table->string('phone');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('profile')->default('uploads/default/default-profile.png');
-            $table->enum('role', array('admin', 'user', 'saller'))->default('user')->comment('user=only transaction/saller mens post content');
+            $table->enum('role', array('admin', 'user', 'institute'))->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

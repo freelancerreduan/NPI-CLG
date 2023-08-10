@@ -33,6 +33,31 @@
             </a>
           </li>
 
+          <li class="nav-item {{  Request::url() == route('teacher.index') || Request::url() == route('teacher.create') ? 'menu-is-opening menu-open' : ''  }}">
+            <a href="#" class="nav-link {{  Request::url() == route('teacher.index') || Request::url() == route('teacher.create') ? 'active' : ''  }}">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Teacher's
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('teacher.index') }}" class="nav-link {{ Request::url() == route('teacher.index') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Teacher</p>
+                    </a>
+                </li>
+
+              <li class="nav-item">
+                <a href="{{ route('teacher.create') }}" class="nav-link {{ Request::url() == route('teacher.create') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Teacher</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
 
 
           <li class="nav-item {{ Request::url() == route('category.index') || Request::url() == route('category.create') ? 'menu-is-opening menu-open' : '' }}">
@@ -114,22 +139,6 @@
             </ul>
           </li>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <li class="nav-item {{  Request::url() == route('blog.index') || Request::url() == route('blog.create') ? 'menu-is-opening menu-open' : ''  }}">
             <a href="#" class="nav-link {{  Request::url() == route('blog.index') || Request::url() == route('blog.create') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-tree"></i>
@@ -152,8 +161,38 @@
                   <p>Create Blog</p>
                 </a>
               </li>
+            </ul>
+          </li>
 
+          
 
+          <li class="nav-item {{  Request::url() == route('payment-method.index') || Request::url() == route('payment-method.create') ? 'menu-is-opening menu-open' : ''  }}">
+            <a href="#" class="nav-link {{  Request::url() == route('payment-method.index') || Request::url() == route('payment-method.create') ? 'active' : ''  }}">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Payments
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('payment-method.index') }}" class="nav-link {{ Request::url() == route('payment-method.index') ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Pending Payments</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('payment-method.create') }}" class="nav-link {{ Request::url() == route('payment-method.create') ? 'active' : '' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Approved Payments</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('payment-method.create') }}" class="nav-link {{ Request::url() == route('payment-method.create') ? 'active' : '' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Rejected Payments</p>
+                    </a>
+                </li>
             </ul>
           </li>
 

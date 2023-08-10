@@ -9,7 +9,9 @@
         @include('partials.subjects')
     @endif
     @include('partials.apply-now')
-    @include('partials.teachers')
+    @if (count($teachers) > 0)
+        @include('partials.teachers')
+    @endif
     @include('partials.blog')
     @include('partials.presentation')
 @endsection

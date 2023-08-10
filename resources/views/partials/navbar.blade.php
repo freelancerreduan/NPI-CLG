@@ -19,7 +19,7 @@
       </div>
       </div>
     </div>
-  </nav>
+</nav>
 <!--===============header Start===============-->
 
 
@@ -29,7 +29,7 @@
   <!-- Header Area Start -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-expand-sm sticky-top" style="background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9))">
     <div class="container-fluid">
-      <a href="index.html" class="h1 ps-md-5">NPI <span class="text-danger"> COLLEGE</span></a>
+      <a href="{{ route('frontend.index') }}" class="h1 ps-md-5 ">Best Learning</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
             <a class="nav-link  mx-md-4 navber-item-a " aria-current="page" href="{{ route('frontend.book.index') }}">Book</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  mx-md-4 navber-item-a " aria-current="page" href="#">Blog</a>
+            <a class="nav-link  mx-md-4 navber-item-a " aria-current="page" href="{{ route('frontend.blog.index') }}">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link  mx-md-4 navber-item-a " aria-current="page" href="#">About Us</a>
@@ -54,7 +54,19 @@
         </ul>
         <div class="header-actions me-md-5 float-end">
 
-            <a href="{{ route('login') }}" class="header-action-btn login-btn">Sign In</a>
+            @auth
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="header-action-btn login-btn">Logout</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="header-action-btn login-btn">Sign In</a>
+            @endauth
+
+
+
+
           <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
                 <i class="fas fa-search"></i></a>
             <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">

@@ -28,8 +28,14 @@ class HomeController extends Controller
         }
 
         elseif(auth()->user()->role == 'user') {
-            return redirect()->route('user.index');
+            return redirect()->route('frontend.index');
         }
+
+        elseif(auth()->user()->role == 'institute') {
+            return redirect()->route('institute.index');
+        }
+
+
         else{
             return 'hi sallar';
         }

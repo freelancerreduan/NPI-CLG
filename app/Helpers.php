@@ -3,6 +3,7 @@
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\PaymentMethod;
 
 if (!function_exists('categories')) {
     function categories($position, $limit)
@@ -36,6 +37,18 @@ if (!function_exists('pages')) {
         $pages = Page::where('book_id', $bookId)->get();
         if( $pages ){
             return $pages;
+        }else{
+        return false;
+        }
+    }
+}
+
+if (!function_exists('paymentMethods')) {
+    function paymentMethods()
+    {
+        $paymentMethods = PaymentMethod::all();
+        if( $paymentMethods ){
+            return $paymentMethods;
         }else{
         return false;
         }

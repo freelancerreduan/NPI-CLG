@@ -61,7 +61,7 @@
                     <!-- Submit button -->
                     <button type="submit" class=" mb-4 btn btn-primary">Sign in</button>
                     <!-- Register buttons -->
-                    <div class="text-center"><p>Not a member? <a href="#!">Register</a></p></div>
+                    <div class="text-center"><p>Not a member? <a href="{{ route('register') }}">Register</a></p></div>
                     </form>
                 </div>
 

@@ -8,10 +8,14 @@
             <div class="col-sm-12 col-md-4 col-lg-4" data-aos="fade-up"data-aos-duration="1000">
                 <h4 class="py-5 " style="font-family: cursive ;"> Top Blog's </h4>
                 <div class="img-item-blog">
-                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="blog-img-item img-fluid">
+                    <a href="{{ route('frontend.blog.details', $blog->slug) }}">
+                        <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="blog-img-item img-fluid">
+                    </a>
                 </div>
                 <div class="text-item-blog">
-                <h4 class="">{{ $blog->title }}</h4>
+                    <a href="{{ route('frontend.blog.details', $blog->slug) }}">
+                        <h4 class="">{{ $blog->title }}</h4>
+                    </a>
                 <p class="">{!! substr($blog->description, 0, 100) !!} </p>
                 <div class="">
                     {{ $blog->blogWithUserRelation->name }}

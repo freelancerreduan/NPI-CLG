@@ -20,11 +20,11 @@
 						<div class="single-footer links text-left px-2" data-aos="fade-right" data-aos-duration="2000">
 							<h4 class="text-start" style="font-family: cursive ;">Information</h4>
 							<ul  style="padding-left: 0 !important; ">
-								<li class="text-start" "><a href="#" >About Us</a></li>
-								<li class="text-start" "><a href="#" >Faq</a></li>
-								<li class="text-start" "><a href="#" >Terms & Conditions</a></li>
-								<li class="text-start" "><a href="#" >Contact Us</a></li>
-								<li class="text-start" "><a href="#" >Help</a></li>
+								<li class="text-start"><a href="#" >About Us</a></li>
+								<li class="text-start"><a href="#" >Faq</a></li>
+								<li class="text-start"><a href="#" >Terms & Conditions</a></li>
+								<li class="text-start"><a href="#" >Contact Us</a></li>
+								<li class="text-start"><a href="#" >Help</a></li>
 							</ul>
 						</div>
 						<!-- End Single Widget -->
@@ -107,9 +107,13 @@
               <div class="left">
               </div>
 							<div class="right d-flex justify-content-center pt-md-3">
-                                <img src="{{ asset('frontend') }}/assets/img/bikas.png" alt="" class="mx-3" style="height: 30px; width: ;">
-                                <img src="{{ asset('frontend') }}/assets/img/nagad-logo.png" alt="" class="mx-3" style="height: 30px; width: ;">
-								<img src="{{ asset('frontend') }}/assets/img/payments.png" alt="#" style="width: 50%;">
+                                @foreach (paymentMethods() as $item)
+                                    <a href="{{ route('frontend.pay', Crypt::encrypt($item->id)) }}">
+                                        <img src="{{ asset($item->logo) }}" alt="{{ $item->account_name }}" class="mx-3" style="height: 30px; width: ;">
+                                    </a>
+                                @endforeach
+                                {{-- <img src="{{ asset('frontend') }}/assets/img/nagad-logo.png" alt="" class="mx-3" style="height: 30px; width: ;"> --}}
+								{{-- <img src="{{ asset('frontend') }}/assets/img/payments.png" alt="#" style="width: 50%;"> --}}
 							</div>
 						</div>
 					</div>
